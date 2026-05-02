@@ -272,7 +272,7 @@ if __name__ == '__main__':
     else:
         # --- Executa imediatamente ao iniciar ---
         executar_varredura_completa()
-
+        schedule.every().day.at("08:00").do(executar_varredura_completa)
         while True:
             schedule.run_pending()
             time.sleep(30)   # verifica a fila de tarefas a cada 30 segundos
